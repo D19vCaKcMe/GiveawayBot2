@@ -7,11 +7,12 @@ module.exports.run = async (client, message, args) => {
     if(!message.content.startsWith(prefix)) return;
 
     let invite = new Discord.MessageEmbed()
-    .setTitle("Invite & Support Link!")
-    .addField("Invite Link", "[Click here to invite me](https://bit.ly/InviteZeroMusic)")
-    .addField("Support Server", "[Click to join support Server](https://discord.gg/REAW5VM)")
+    .setTitle("")
+    .addField("Invite Link", "[Click here to invite me](https://discord.com/api/oauth2/authorize?client_id=766661157834194944&permissions=8&scope=bot)")
+    .addField("Or Support My Server", "[Click to join support Server](https://discord.gg/5ZsD5fkd)")
     .setTimestamp()
-    .setFooter(`Requested by ${message.author.tag}`, client.user.displayAvatarURL())
+    .setColor('RANDOM')
+    .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL());
     message.channel.send(invite);
 }
 
