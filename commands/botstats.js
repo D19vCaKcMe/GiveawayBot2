@@ -17,9 +17,9 @@ module.exports.run = async (client, message, args) => {
     let cores = os.cpus().length;
 
     let stats = new Discord.MessageEmbed()
-    .setAuthor('0_0#6666 (Zero)')
+    .setAuthor('')
     .setTitle(`Statistics of ${client.user.username}`)
-    .setColor('RED')
+    .setColor('RANDOM')
     .addField("Server Count", `${servercount}`, true)
     .addField("Users Count", `${usercount}`, true)
     .addField("Channel's Count", `${channelscount}`, true)
