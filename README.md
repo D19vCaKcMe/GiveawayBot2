@@ -1,3 +1,4 @@
 # Giveaway-Bot-2
 
-gay bot
+# Host On Repl.it
+[![Glitch.com](https://glitch.com/edit/#!/difficult-righteous-amphibian?path=README.md%3A1%3A0)
