@@ -7,17 +7,18 @@ module.exports.run = async (client, message, args) => {
     if(!message.content.startsWith(prefix)) return;
 
     let help = new Discord.MessageEmbed()
-      .setAuthor("Zero")
-      .setTitle("Command List & Guide for the Bot")
-      .setDescription("Below are Commands you can do with Bot, Right now there is only 6 commands available, more commands will be added soon.")
-      .addField("🎁 Giveaway 🎁","start [channel-name] [Time] [winners] [Prize]\nreroll [prize name]\nend [prize name]")
-      .addField("Examples", "g!start #giveaway 5m 1 Testing\ng!end Testing\ng!reroll Testing")
-      .addField("Utility", "ping, invite", true)
-      .addField("ℹ Information ℹ", "stats", true)
-      .addField("Check out", "[This Channel](https://www.youtube.com/channel/UCF9E-xef9jL9QgziZRDHKKQ) to make your own giveaway bot")
+      .setTitle("Command List ")
+      .addField("\🎁 Giveaway \🎁","`c!start (Mention Channel) (Times) (Winners) (Prize)`\n`c!greroll [prize name]`\n`c!gend [prize name]`")
+      .addField("\💰 Economy \💰","`c!beg` `c!searchmoney` `c!work` `c!daily` `c!weekly`")
+      .addField("\🎵 Music \🎵","`c!play` `c!search` `c!loop` `c!lyrics` `c!pause` `c!resume` `c!stop` `c!queue` `c!skip` `c!volume`")
+      .addField("\👾 General \👾 ","`c!avatar` `c!channelinfo` `c!serverinfo` `c!shorten` `c!userinfo` `c!youtube` `c!stop` `c!queue`")
+      .addField("\🔧 Moderation \🔧  ","`c!ban` `c!kick` `c!lock` `c!mute` `c!purge` `c!tempban` `c!unmute`")
+      .addField("\🛠️ Utility \🛠️", "`c!ping` `c!invite`", true)
+      .addField("ℹ Information ℹ", "`c!botstats`", true)
       .setTimestamp()
+      .setColor('RANDOM')
       .setFooter(`Command Requested By ${message.author.tag}`, client.user.displayAvatarURL());
-    message.channel.send("**Sent the commands in Direct Messages! 💌, Check DMs**");
+    message.channel.send("**- Check Mail**");
 
     return message.author.send(help);
 }
