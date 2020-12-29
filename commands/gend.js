@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
 
     // If no message ID or giveaway name is specified
     if(!args[0]){
-        return message.channel.send(':x: You have to specify a valid message ID!');
+        return message.channel.send('You must have ID Message to end the giveaway!');
     }
 
     // try to found the giveaway with prize then with ID
@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
 
     // If no giveaway was found
     if(!giveaway){
-        return message.channel.send('Unable to find a giveaway for `'+ args.join(' ') + '`.');
+        return message.channel.send('unable to find a giveaway for `'+ args.join(' ') + '`.');
     }
 
     // Edit the giveaway
@@ -31,14 +31,14 @@ exports.run = async (client, message, args) => {
     // Success message
     .then(() => {
         // Success message
-        message.channel.send('Giveaway will end in less than '+(client.giveawaysManager.options.updateCountdownEvery/1000)+' seconds...');
+        message.channel.send('giveaway will end in '+(client.giveawaysManager.options.updateCountdownEvery/1000)+' seconds...');
     })
     .catch((e) => {
         if(e.startsWith(`Giveaway with message ID ${giveaway.messageID} is already ended.`)){
-            message.channel.send('This giveaway is already ended!');
+            message.channel.send('this giveaway already end!');
         } else {
             console.error(e);
-            message.channel.send('An error occured...');
+            message.channel.send('An error occured');
         }
     });
 
